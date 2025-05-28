@@ -9,7 +9,9 @@ class Location(models.Model):
     city = models.CharField(max_length=50)
     street = models.CharField(max_length=50)
     building = models.CharField(max_length=50)
-    appartment = models.CharField(max_length=50, null=True, blank=True)
+    appartment = models.CharField(
+        max_length=50, null=True, blank=True, help_text="Необязательное поле"
+    )
 
 
 class Event(models.Model):
@@ -27,8 +29,8 @@ class Event(models.Model):
         validators=[MinValueValidator(0)], help_text="Вместимость (больше 0)"
     )
 
-    start_time = models.DateTimeField()
-    end_time = models.DateTimeField()
+    start_time = models.DateTimeField(help_text='Начало события (Формат = гггг.мм.дд ЧЧ:ММ)')
+    end_time = models.DateTimeField(help_text='Конец события (Формат = гггг.мм.дд ЧЧ:ММ)')
 
 
 class Ticket(models.Model):
@@ -57,4 +59,4 @@ class Category(models.Model):
     def __str__(self) -> str:
         return self.name
 
-    name = models.CharField(max_length=50)
+    name = models.CharField(max_length=50, unique=True)

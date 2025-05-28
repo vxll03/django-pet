@@ -29,6 +29,11 @@ INSTALLED_APPS = [
     'user_data',
 ]
 
+# REST_FRAMEWORK = {
+#     'DATETIME_FORMAT': '%Y.%m.%d %H:%M',
+#     'DATETIME_INPUT_FORMAT': ['%Y.%m.%d %H:%M'],
+# }
+
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',

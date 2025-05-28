@@ -1,7 +1,13 @@
 from rest_framework import serializers
 
-from .models import Event, Ticket
+from .models import Category, Event, Location, Ticket
 
+class LocationSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Location
+
+        fields = ('__all__')
+        read_only_fields = ('id',)
 
 class EventSerializer(serializers.ModelSerializer):
     tickets_count = serializers.IntegerField(source='tickets.count', read_only=True)
@@ -34,3 +40,11 @@ class TicketSerializer(serializers.ModelSerializer):
         if event.tickets.count() >= event.capacity:
             raise serializers.ValidationError("Билеты закончились")
         return attrs
+    
+
+class  CategorySerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Category
+
+        fields = '__all__'
+        read_only_fields = ('id',)

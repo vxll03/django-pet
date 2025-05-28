@@ -1,0 +1,15 @@
+# Environment
+.env
+.venv/
+.idea/
+
+# DB Migrations (w/o init.py)
+*/migrations/*
+*/migrations/__init__.py
+
+*/*/migrations/*
+!*/*/migrations/__init__.py
+
+# pyhton
+*.pyc
+*/__pycache__/

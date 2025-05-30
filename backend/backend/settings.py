@@ -27,6 +27,7 @@ INSTALLED_APPS = [
 
     'event_manager',
     'user_data',
+    'testapp',
 ]
 
 # REST_FRAMEWORK = {

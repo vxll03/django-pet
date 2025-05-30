@@ -7,9 +7,12 @@
 */migrations/*
 */migrations/__init__.py
 
-*/*/migrations/*
-!*/*/migrations/__init__.py
+**/migrations/*
+!**/migrations/__init__.py
 
 # pyhton
 *.pyc
 */__pycache__/
+
+# Ruff
+ruff.toml

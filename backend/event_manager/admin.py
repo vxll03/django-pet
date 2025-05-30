@@ -14,3 +14,4 @@ class EventAdmin(admin.ModelAdmin):
     list_display = ("title", "capacity", "start_time", "end_time")
     list_filter = ("location__city", "categories__name")
     search_fields = ("title",)
+    date_hierarchy = ('start_time')

@@ -13,3 +13,9 @@
 # pyhton
 *.pyc
 */__pycache__/
+
+#Ruff
+ruff.toml
+
+# Other
+testapp/
